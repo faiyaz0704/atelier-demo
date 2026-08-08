@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atelier — Our Story. Born in Dhaka from a conviction that clothing should be architecture for the body. Quiet luxury, radical restraint, and craft without compromise.">
+  <meta name="theme-color" content="#080808">
+  <title>Our Story | Atelier</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================
+       A. CSS CUSTOM PROPERTIES (:root)
+       ========================================================== */
+    :root {
+      --bg-deep-black: #080808;
+      --bg-graphite: #3A3A3A;
+      --bg-footer: #040404;
+      --accent-rose-gold: #B4836B;
+      --accent-rose-gold-rgb: 180, 131, 107;
+      --color-light: #F0EDE8;
+      --color-light-rgb: 240, 237, 232;
+      --color-muted: rgba(240, 237, 232, 0.5);
+      --color-ghost: rgba(240, 237, 232, 0.25);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+      --transition-slow: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+      --transition-medium: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      --transition-fast: 0.2s ease;
+      --header-height: 80px;
+    }
+
+    /* ==========================================================
+       B. RESET / BASE STYLES
+       ========================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: var(--bg-deep-black);
+      color: var(--color-light);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: var(--bg-deep-black);
+      width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep-black); }
+    ::-webkit-scrollbar-thumb { background: var(--bg-graphite); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent-rose-gold); }
+
+    /* ==========================================================
+       C. TYPOGRAPHY SYSTEM
+       ========================================================== */
+    h1, h2, h3, h4, .display-font {
+      font-family: var(--font-display);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-fast), opacity var(--transition-fast);
+    }
+
+    /* ==========================================================
+       D. LAYOUT UTILITIES
+       ========================================================== */
+    .container {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 6rem);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ==========================================================
+       E. COMPONENT STYLES
+       ========================================================== */
+
+    /* --- Focus States (Global) --- */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 1px solid var(--accent-rose-gold);
+      outline-offset: 4px;
+    }
+
+    /* --- Navigation --- */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      z-index: 1000;
+      background-color: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background-color var(--transition-medium), border-bottom-color var(--transition-medium);
+    }
+
+    .nav.scrolled {
+      background-color: rgba(8, 8, 8, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom-color: rgba(240, 237, 232, 0.05);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      position: relative;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      gap: clamp(1rem, 2.5vw, 3.5rem);
+      width: 35%;
+    }
+
+    .nav-right {
+      justify-content: flex-end;
+    }
+
+    .nav-link, .nav-icon-link {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      background: none;
+      border: none;
+      color: var(--color-light);
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: opacity var(--transition-fast), color var(--transition-fast);
+    }
+
+    .nav-link:hover, .nav-icon-link:hover {
+      opacity: 1;
+      color: var(--accent-rose-gold);
+    }
+
+    .nav-link:active, .nav-icon-link:active {
+      opacity: 0.8;
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      z-index: 1002;
+    }
+
+    /* --- Hamburger & Mobile Menu --- */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 14px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1003;
+      padding: 0;
+    }
+
+    .hamburger-line {
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-light);
+      transition: transform var(--transition-medium), opacity var(--transition-medium);
+    }
+
+    .hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger[aria-expanded="true"] .hamburger-line:nth-child(2) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      background-color: var(--bg-deep-black);
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition-medium), visibility var(--transition-medium);
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .mobile-link {
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      opacity: 0.6;
+      transition: opacity var(--transition-fast), color var(--transition-fast);
+    }
+
+    .mobile-link:hover {
+      opacity: 1;
+      color: var(--accent-rose-gold);
+    }
+
+    .mobile-link:active {
+      opacity: 0.8;
+    }
+
+    /* --- Philosophy Strip (reused) --- */
+    .philosophy-strip {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: clamp(6rem, 10vw, 12rem) 1.5rem;
+      text-align: center;
+      background-color: var(--bg-deep-black);
+      position: relative;
+    }
+
+    .philosophy-line-accent {
+      width: 60px;
+      height: 1px;
+      background-color: var(--accent-rose-gold);
+      opacity: 0.6;
+    }
+
+    .philosophy-text {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-style: italic;
+      color: var(--color-light);
+      line-height: 1.3;
+      max-width: 900px;
+      letter-spacing: 0.02em;
+    }
+
+    /* --- Footer --- */
+    .footer {
+      background-color: var(--bg-footer);
+      padding: clamp(6rem, 10vw, 12rem) 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-top: 1px solid rgba(240, 237, 232, 0.02);
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      margin-bottom: clamp(3rem, 5vw, 6rem);
+      display: inline-block;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: clamp(1.5rem, 4vw, 4rem);
+      margin-bottom: clamp(4rem, 6vw, 8rem);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      opacity: 0.35;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--accent-rose-gold);
+    }
+
+    .footer-links a:active {
+      opacity: 0.8;
+    }
+
+    .footer-copyright {
+      font-size: 0.7rem;
+      color: var(--color-muted);
+      letter-spacing: 0.1em;
+      opacity: 0.5;
+    }
+
+    /* --- Scroll Reveals --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity var(--transition-slow), transform var(--transition-slow);
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- Animation Keyframes --- */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ==========================================================
+       F. ABOUT PAGE — SECTION-SPECIFIC STYLES
+       ========================================================== */
+
+    /* --- PAGE HERO --- */
+    .about-hero {
+      position: relative;
+      height: clamp(60vh, 65vh, 70vh);
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: clamp(6rem, 12vw, 15rem);
+    }
+
+    .about-hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0a0a0a;
+      background-image:
+        linear-gradient(135deg, rgba(180, 131, 107, 0.03) 0%, transparent 50%),
+        linear-gradient(225deg, rgba(240, 237, 232, 0.02) 0%, transparent 50%);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .about-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(8, 8, 8, 0.3) 0%, rgba(8, 8, 8, 0.75) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+
+    .about-hero-content h1 {
+      font-size: clamp(4rem, 10vw, 9rem);
+      line-height: 1;
+      letter-spacing: 0.04em;
+      color: var(--color-light);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(35px);
+      animation: fadeInUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards;
+    }
+
+    .about-hero-subline {
+      font-family: var(--font-body);
+      font-size: clamp(0.7rem, 1vw, 0.85rem);
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--accent-rose-gold);
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.6s forwards;
+    }
+
+    /* --- EDITORIAL ORIGIN BLOCKS --- */
+    .origin-section {
+      margin-bottom: clamp(6rem, 12vw, 15rem);
+    }
+
+    .origin-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 6rem);
+      align-items: center;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 6rem);
+    }
+
+    .origin-block + .origin-block {
+      margin-top: clamp(6rem, 10vw, 12rem);
+    }
+
+    .origin-block.reversed .origin-image-col {
+      order: 2;
+    }
+
+    .origin-block.reversed .origin-text-col {
+      order: 1;
+    }
+
+    .origin-image-col {
+      position: relative;
+    }
+
+    .origin-image-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background-color: #0c0c0c;
+      border: 1px solid rgba(240, 237, 232, 0.03);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .origin-image-placeholder::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(135deg, rgba(180, 131, 107, 0.04) 0%, transparent 60%),
+        linear-gradient(315deg, rgba(240, 237, 232, 0.02) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .origin-text-col {
+      padding: clamp(1rem, 3vw, 3rem) 0;
+    }
+
+    .origin-overline {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent-rose-gold);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .origin-headline {
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      line-height: 1.1;
+      color: var(--color-light);
+      margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+      letter-spacing: 0.03em;
+    }
+
+    .origin-body {
+      font-size: clamp(0.9rem, 1vw, 1.05rem);
+      color: var(--color-muted);
+      line-height: 1.9;
+      max-width: 520px;
+      font-weight: 300;
+    }
+
+    /* --- VALUES STRIP --- */
+    .values-strip {
+      background-color: #080808;
+      padding: clamp(5rem, 8vw, 9rem) 0;
+      margin-bottom: clamp(0rem, 0vw, 0rem);
+    }
+
+    .values-grid {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 6rem);
+    }
+
+    .value-item {
+      flex: 1;
+      text-align: center;
+      padding: 0 clamp(1.5rem, 3vw, 3.5rem);
+    }
+
+    .value-item + .value-item {
+      border-left: 1px solid rgba(180, 131, 107, 0.2);
+    }
+
+    .value-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2vw, 1.8rem);
+      font-weight: 300;
+      color: var(--color-light);
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .value-desc {
+      font-family: var(--font-body);
+      font-size: clamp(0.8rem, 0.9vw, 0.9rem);
+      color: var(--color-muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* --- STUDIO SECTION --- */
+    .studio-section {
+      padding: clamp(4rem, 8vw, 8rem) 0;
+      margin-bottom: 0;
+    }
+
+    .studio-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 6rem);
+    }
+
+    .studio-image-placeholder {
+      width: 100%;
+      aspect-ratio: 21/9;
+      background-color: #0c0c0c;
+      border: 1px solid rgba(240, 237, 232, 0.03);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .studio-image-placeholder::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, transparent 60%, rgba(8, 8, 8, 0.4) 100%);
+      pointer-events: none;
+    }
+
+    .studio-caption {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      font-style: italic;
+      color: var(--color-muted);
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    /* ==========================================================
+       G. RESPONSIVE BREAKPOINTS (tablet → mobile)
+       ========================================================== */
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .origin-block {
+        gap: clamp(1.5rem, 4vw, 3rem);
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav-left, .nav-right {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .origin-block {
+        grid-template-columns: 1fr;
+        gap: clamp(2rem, 4vw, 3rem);
+      }
+
+      .origin-block.reversed .origin-image-col {
+        order: 1;
+      }
+
+      .origin-block.reversed .origin-text-col {
+        order: 2;
+      }
+
+      .origin-image-placeholder {
+        aspect-ratio: 4/5;
+      }
+
+      .origin-body {
+        max-width: 100%;
+      }
+
+      .values-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(2.5rem, 5vw, 3.5rem);
+      }
+
+      .value-item {
+        padding: 0;
+        max-width: 400px;
+      }
+
+      .value-item + .value-item {
+        border-left: none;
+        padding-top: clamp(2.5rem, 5vw, 3.5rem);
+        border-top: 1px solid rgba(180, 131, 107, 0.15);
+      }
+
+      .studio-image-placeholder {
+        aspect-ratio: 16/9;
+      }
+    }
+
+    /* ==========================================================
+       H. ACCESSIBILITY, REDUCED MOTION, PRINT
+       ========================================================== */
+
+    /* Reduced motion: disable all animations */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* Print */
+    @media print {
+      .nav,
+      .mobile-menu,
+      .hamburger {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+        color: #000;
+      }
+      .about-hero {
+        height: auto;
+        margin-bottom: 2rem;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================================================
+       NAVIGATION
+       ====================================================== -->
+  <nav class="nav" id="main-nav" aria-label="Primary navigation">
+    <div class="nav-container container">
+      <!-- Left side links -->
+      <div class="nav-left" role="list">
+        <a href="shop.html" class="nav-link" role="listitem">WOMEN</a>
+        <a href="shop.html" class="nav-link" role="listitem">MEN</a>
+        <a href="index.html#new" class="nav-link" role="listitem">NEW</a>
+      </div>
+
+      <!-- Centered Logo -->
+      <a href="index.html" class="nav-brand" aria-label="Atelier — return to homepage">ATELIER</a>
+
+      <!-- Right side links -->
+      <div class="nav-right">
+        <button class="nav-icon-link" type="button" aria-label="Open search">SEARCH</button>
+        <button class="nav-icon-link" type="button" aria-label="View shopping cart">CART</button>
+      </div>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button class="hamburger" id="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="hamburger-line" aria-hidden="true"></span>
+        <span class="hamburger-line" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-menu" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+      <nav class="mobile-menu-links" aria-label="Mobile navigation links">
+        <a href="shop.html" class="mobile-link">WOMEN</a>
+        <a href="shop.html" class="mobile-link">MEN</a>
+        <a href="index.html#new" class="mobile-link">NEW</a>
+        <a href="#" class="mobile-link">SEARCH</a>
+        <a href="#" class="mobile-link">CART</a>
+      </nav>
+    </div>
+  </nav>
+
+  <!-- No-JS fallback -->
+  <noscript>
+    <style>
+      .reveal { opacity: 1; transform: none; }
+      .about-hero-content h1, .about-hero-subline { opacity: 1; transform: none; animation: none; }
+      .mobile-menu { display: none; }
+    </style>
+  </noscript>
+
+  <!-- ======================================================
+       PAGE HERO — Editorial Full-Width
+       ====================================================== -->
+  <header class="about-hero">
+    <!-- Replace background-image with actual editorial photograph -->
+    <div class="about-hero-image" role="img" aria-label="Atelier studio interior — fabric draping over cutting table in natural light"></div>
+    <div class="about-hero-overlay" aria-hidden="true"></div>
+    <div class="about-hero-content">
+      <h1>Our Story</h1>
+      <span class="about-hero-subline">Dhaka, 2024</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================================================
+         BRAND ORIGIN — Editorial Alternating Blocks
+         ====================================================== -->
+    <section class="origin-section" aria-label="Brand origin story">
+
+      <!-- Block 1 — Image Left, Text Right -->
+      <div class="origin-block reveal">
+        <div class="origin-image-col">
+          <div class="origin-image-placeholder" role="img" aria-label="Close-up of pattern cutting — hands positioning fabric on a dark surface"></div>
+        </div>
+        <div class="origin-text-col">
+          <span class="origin-overline">The Beginning</span>
+          <h2 class="origin-headline">Born from Restraint</h2>
+          <p class="origin-body">Atelier was founded in Dhaka with a single conviction: that clothing should be architecture for the body. Not decoration. Not trend. Structure. Every piece we create begins with a question — what does this garment need to be? Nothing more is added.</p>
+        </div>
+      </div>
+
+      <!-- Block 2 — Image Right, Text Left -->
+      <div class="origin-block reversed reveal">
+        <div class="origin-image-col">
+          <div class="origin-image-placeholder" role="img" aria-label="Minimal atelier workroom — single garment on a tailor's form against a dark wall"></div>
+        </div>
+        <div class="origin-text-col">
+          <span class="origin-overline">The Philosophy</span>
+          <h2 class="origin-headline">Less, but Better</h2>
+          <p class="origin-body">We produce two collections per year. No drops. No capsules. No collaborations designed for social media. Each collection contains no more than twenty pieces — each one engineered to outlast seasons, trends, and the garments hanging beside it in your wardrobe.</p>
+        </div>
+      </div>
+
+      <!-- Block 3 — Image Left, Text Right -->
+      <div class="origin-block reveal">
+        <div class="origin-image-col">
+          <div class="origin-image-placeholder" role="img" aria-label="Artisan hand-pressing a seam — close detail of craftsmanship"></div>
+        </div>
+        <div class="origin-text-col">
+          <span class="origin-overline">The Craft</span>
+          <h2 class="origin-headline">Hands Before Machines</h2>
+          <p class="origin-body">Every Atelier garment passes through the hands of at least twelve artisans before it reaches yours. From the pattern cutters in our Dhaka atelier to the hand-finishers who press every seam, we believe that craft cannot be automated. Speed is not our metric. Precision is.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================
+         VALUES STRIP
+         ====================================================== -->
+    <section class="values-strip reveal" aria-label="Core values">
+      <div class="values-grid">
+        <div class="value-item">
+          <h3 class="value-title">Intentional Design</h3>
+          <p class="value-desc">Every detail justified, nothing decorative</p>
+        </div>
+        <div class="value-item">
+          <h3 class="value-title">Radical Restraint</h3>
+          <p class="value-desc">Twenty pieces per collection, no more</p>
+        </div>
+        <div class="value-item">
+          <h3 class="value-title">Craft Over Speed</h3>
+          <p class="value-desc">Twelve artisans per garment, zero shortcuts</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         ATELIER STATEMENT — Philosophy Strip
+         ====================================================== -->
+    <section class="philosophy-strip reveal" aria-label="Brand statement">
+      <div class="philosophy-line-accent" aria-hidden="true"></div>
+      <blockquote class="philosophy-text">"We don't make clothes for everyone. We make clothes for those who understand that what you remove matters more than what you add."</blockquote>
+      <div class="philosophy-line-accent" aria-hidden="true"></div>
+    </section>
+
+    <!-- ======================================================
+         THE STUDIO — Single Editorial Image
+         ====================================================== -->
+    <section class="studio-section reveal" aria-label="The studio">
+      <div class="studio-inner">
+        <!-- Replace with actual wide-format studio photograph -->
+        <div class="studio-image-placeholder" role="img" aria-label="Panoramic view of the Atelier studio — natural light across work tables, fabric rolls, and a single garment in progress"></div>
+        <p class="studio-caption">The Atelier — Dhaka, where every collection begins and ends.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer class="footer" id="footer">
+    <a href="index.html" class="footer-brand" aria-label="Atelier — return to homepage">ATELIER</a>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="shop.html">COLLECTIONS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="#">STOCKISTS</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <p class="footer-copyright">&copy; 2026 ATELIER. All rights reserved.</p>
+  </footer>
+
+  <!-- ======================================================
+       SCRIPTS
+       ====================================================== -->
+  <script>
+    /* ==========================================================
+       Navigation — Scroll State (passive, rAF-throttled)
+       ========================================================== */
+    (function () {
+      var nav = document.getElementById('main-nav');
+      var ticking = false;
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(function () {
+            if (window.scrollY > 50) {
+              nav.classList.add('scrolled');
+            } else {
+              nav.classList.remove('scrolled');
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+
+    /* ==========================================================
+       Hamburger & Mobile Menu — Toggle, Focus Trap, Escape Key
+       ========================================================== */
+    (function () {
+      var hamburger = document.getElementById('hamburger-btn');
+      var mobileNav = document.getElementById('mobile-nav');
+      var mobileLinks = mobileNav.querySelectorAll('.mobile-link');
+
+      function openMenu() {
+        hamburger.setAttribute('aria-expanded', 'true');
+        mobileNav.classList.add('open');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        setTimeout(function () {
+          if (mobileLinks.length) mobileLinks[0].focus();
+        }, 100);
+      }
+
+      function closeMenu() {
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('open');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        hamburger.focus();
+      }
+
+      function isMenuOpen() {
+        return hamburger.getAttribute('aria-expanded') === 'true';
+      }
+
+      hamburger.addEventListener('click', function () {
+        if (isMenuOpen()) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (isMenuOpen()) closeMenu();
+        });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && isMenuOpen()) {
+          closeMenu();
+        }
+      });
+
+      mobileNav.addEventListener('keydown', function (e) {
+        if (e.key !== 'Tab' || !isMenuOpen()) return;
+
+        var focusable = [hamburger].concat(Array.from(mobileLinks));
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+    })();
+
+    /* ==========================================================
+       Scroll Reveal — IntersectionObserver
+       ========================================================== */
+    (function () {
+      var revealElements = document.querySelectorAll('.reveal');
+
+      if (!('IntersectionObserver' in window)) {
+        revealElements.forEach(function (el) { el.classList.add('revealed'); });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
+
+      revealElements.forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
