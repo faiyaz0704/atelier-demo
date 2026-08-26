@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#080808">
+	<title>ATELIER — Luxury Fashion Boutique & Tailoring</title>
+	<meta name="description" content="Atelier is a luxury boutique fashion house dedicated to architectural silhouettes, bespoke tailoring, and permanence.">
+	
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="assets/css/global.css">
+	<link rel="stylesheet" href="assets/css/header.css">
+	<link rel="stylesheet" href="assets/css/homepage.css">
+	<link rel="stylesheet" href="assets/css/footer.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="home page-template-front-page">
+
+	<!-- Skip Link -->
+	<a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
+
+	<!-- ══════════════════════════════════════════════════════
+	     HEADER & NAVIGATION
+	     ══════════════════════════════════════════════════════ -->
+	<nav class="nav" id="main-nav" aria-label="Primary navigation">
+		<div class="nav-container container">
+			<!-- Left side links -->
+			<div class="nav-left" role="list">
+				<a href="shop.html" class="nav-link" role="listitem">SHOP</a>
+				<a href="about.html" class="nav-link" role="listitem">ABOUT</a>
+				<a href="contact.html" class="nav-link" role="listitem">SHOWROOM</a>
+			</div>
+
+			<!-- Centered Brand -->
+			<a href="index.html" class="nav-brand" aria-label="ATELIER — return to homepage">
+				ATELIER
+			</a>
+
+			<!-- Right side links -->
+			<div class="nav-right">
+				<a href="#search" class="nav-icon-link search-trigger" aria-label="Search creations">SEARCH</a>
+				<a href="account.html" class="nav-icon-link" aria-label="Account">ACCOUNT</a>
+				<a href="cart.html" class="nav-icon-link" aria-label="View shopping cart">
+					CART <span class="nav-cart-count">(2)</span>
+				</a>
+			</div>
+
+			<!-- Hamburger Button (Mobile) -->
+			<button class="hamburger" id="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+				<span class="hamburger-line" aria-hidden="true"></span>
+				<span class="hamburger-line" aria-hidden="true"></span>
+			</button>
+		</div>
+
+		<!-- Mobile Drawer -->
+		<div class="mobile-menu" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+			<nav class="mobile-menu-links" aria-label="Mobile navigation links">
+				<a href="index.html" class="mobile-link">HOME</a>
+				<a href="shop.html" class="mobile-link">SHOP</a>
+				<a href="about.html" class="mobile-link">ABOUT</a>
+				<a href="contact.html" class="mobile-link">SHOWROOM & CONTACT</a>
+				<a href="account.html" class="mobile-link">MY ACCOUNT</a>
+				<a href="cart.html" class="mobile-link">SHOPPING BAG</a>
+			</nav>
+		</div>
+	</nav>
+
+	<!-- Search Modal -->
+	<div class="search-modal" id="search-modal" aria-hidden="true" role="dialog" aria-label="Search Atelier Collections">
+		<button class="search-modal-close" id="search-modal-close" aria-label="Close search">&times;</button>
+		<div class="search-modal-inner">
+			<div class="search-input-wrap">
+				<input type="search" id="header-search-input" placeholder="Search creations, coats, silks..." autocomplete="off">
+			</div>
+			<div class="search-suggestions">
+				<span class="search-suggestions-label">Popular Searches:</span>
+				<a href="shop.html?cat=outerwear" class="search-pill">Structured Trench</a>
+				<a href="shop.html?cat=dresses" class="search-pill">Silk Column Dress</a>
+				<a href="shop.html?cat=tailoring" class="search-pill">Double-Breasted Blazer</a>
+				<a href="shop.html?cat=knitwear" class="search-pill">Merino Knitwear</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- ══════════════════════════════════════════════════════
+	     MAIN CONTENT
+	     ══════════════════════════════════════════════════════ -->
+	<main id="main-content" role="main">
+
+		<!-- 1. HERO SLIDER -->
+		<header class="hero" id="hero">
+			<div class="hero-slides" aria-live="off">
+				<div class="hero-slide active" style="background-image: url('assets/images/hero.jpg');" role="img" aria-label="Hero fashion editorial image 1" aria-hidden="false"></div>
+				<div class="hero-slide" style="background-image: url('assets/images/hero2.jpg');" role="img" aria-label="Hero fashion editorial image 2" aria-hidden="true"></div>
+				<div class="hero-slide" style="background-image: url('assets/images/hero3.jpg');" role="img" aria-label="Hero fashion editorial image 3" aria-hidden="true"></div>
+				<div class="hero-slide" style="background-image: url('assets/images/hero4.jpg');" role="img" aria-label="Hero fashion editorial image 4" aria-hidden="true"></div>
+			</div>
+
+			<div class="hero-overlay" aria-hidden="true"></div>
+
+			<div class="hero-content">
+				<span class="hero-overline">AUTUMN / WINTER EDIT</span>
+				<h1 class="hero-headline">The Edit</h1>
+				<p class="hero-subline">Precision. Restraint. Form.</p>
+				<a href="shop.html" class="btn-luxury hero-btn" aria-label="Explore collection">
+					<span>EXPLORE COLLECTION</span>
+					<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+						<polyline points="6 3 11 8 6 13"/>
+					</svg>
+				</a>
+			</div>
+
+			<!-- Slide Progress Indicators -->
+			<div class="hero-indicators" id="hero-indicators" role="tablist" aria-label="Hero slideshow controls">
+				<button class="hero-indicator active" role="tab" aria-label="Go to slide 1" aria-selected="true"></button>
+				<button class="hero-indicator" role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
+				<button class="hero-indicator" role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
+				<button class="hero-indicator" role="tab" aria-label="Go to slide 4" aria-selected="false"></button>
+			</div>
+		</header>
+
+		<!-- 2. TICKER STRIP -->
+		<div class="ticker-strip" aria-hidden="true">
+			<div class="ticker-track">
+				<span class="ticker-item"><span>Complimentary Express Shipping Across Bangladesh</span><span class="ticker-dot"></span></span>
+				<span class="ticker-item"><span>Autumn / Winter Capsule Live</span><span class="ticker-dot"></span></span>
+				<span class="ticker-item"><span>Bespoke Showroom Fittings by Appointment</span><span class="ticker-dot"></span></span>
+				<span class="ticker-item"><span>Cash on Delivery Available Nationwide</span><span class="ticker-dot"></span></span>
+				<span class="ticker-item"><span>Complimentary Express Shipping Across Bangladesh</span><span class="ticker-dot"></span></span>
+				<span class="ticker-item"><span>Autumn / Winter Capsule Live</span><span class="ticker-dot"></span></span>
+				<span class="ticker-item"><span>Bespoke Showroom Fittings by Appointment</span><span class="ticker-dot"></span></span>
+				<span class="ticker-item"><span>Cash on Delivery Available Nationwide</span><span class="ticker-dot"></span></span>
+			</div>
+		</div>
+
+		<!-- 3. CATEGORY SHOWCASE (PORTRAIT 4:5) -->
+		<section class="category-grid-section container reveal" id="categories">
+			<div class="section-header">
+				<span class="season-tag">DIRECTORY</span>
+				<h2 class="section-title">SHOP BY CATEGORY</h2>
+			</div>
+
+			<div class="category-grid">
+				<a href="shop.html?cat=outerwear" class="category-card" aria-label="Explore Outerwear collection">
+					<img src="assets/images/jacket.jpg" alt="Outerwear" class="category-card-bg" loading="lazy" decoding="async">
+					<div class="category-card-overlay" aria-hidden="true"></div>
+					<div class="category-card-content">
+						<span class="category-card-title">Outerwear</span>
+						<span class="category-card-action">EXPLORE COLLECTION &rarr;</span>
+					</div>
+					<div class="category-card-accent" aria-hidden="true"></div>
+				</a>
+
+				<a href="shop.html?cat=tailoring" class="category-card" aria-label="Explore Tailoring collection">
+					<img src="assets/images/overcoat.jpg" alt="Tailoring" class="category-card-bg" loading="lazy" decoding="async">
+					<div class="category-card-overlay" aria-hidden="true"></div>
+					<div class="category-card-content">
+						<span class="category-card-title">Tailoring</span>
+						<span class="category-card-action">EXPLORE COLLECTION &rarr;</span>
+					</div>
+					<div class="category-card-accent" aria-hidden="true"></div>
+				</a>
+
+				<a href="shop.html?cat=knitwear" class="category-card" aria-label="Explore Knitwear collection">
+					<img src="assets/images/halfzip.jpg" alt="Knitwear" class="category-card-bg" loading="lazy" decoding="async">
+					<div class="category-card-overlay" aria-hidden="true"></div>
+					<div class="category-card-content">
+						<span class="category-card-title">Knitwear</span>
+						<span class="category-card-action">EXPLORE COLLECTION &rarr;</span>
+					</div>
+					<div class="category-card-accent" aria-hidden="true"></div>
+				</a>
+
+				<a href="shop.html?cat=dresses" class="category-card" aria-label="Explore Dresses & Silks collection">
+					<img src="assets/images/dress.jpg" alt="Dresses & Silks" class="category-card-bg" loading="lazy" decoding="async">
+					<div class="category-card-overlay" aria-hidden="true"></div>
+					<div class="category-card-content">
+						<span class="category-card-title">Dresses & Silks</span>
+						<span class="category-card-action">EXPLORE COLLECTION &rarr;</span>
+					</div>
+					<div class="category-card-accent" aria-hidden="true"></div>
+				</a>
+			</div>
+		</section>
+
+		<!-- 4. EDITORIAL PRODUCT GRID (MAGAZINE SPREAD) -->
+		<section class="section grid-section container reveal" id="season">
+			<div class="section-header">
+				<span class="season-tag">FEATURED</span>
+				<h2 class="section-title">CURRENT SEASON</h2>
+			</div>
+
+			<div class="product-grid">
+				<!-- Item 1: Trench -->
+				<a href="product.html" class="product-card" aria-label="Monochrome Structured Trench — Outerwear — ৳38,500">
+					<div class="product-card-image-wrapper">
+						<img src="assets/images/overcoat.jpg" alt="Monochrome Structured Trench" class="product-card-image" loading="eager">
+					</div>
+					<div class="product-card-details">
+						<span class="product-card-category">Outerwear</span>
+						<h3 class="product-card-title">Monochrome Structured Trench</h3>
+						<span class="product-card-price">৳38,500</span>
+					</div>
+				</a>
+
+				<!-- Item 2: Blazer -->
+				<a href="product-jacket.html" class="product-card" aria-label="Raw Silk Double-Breasted Blazer — Tailoring — ৳42,000">
+					<div class="product-card-image-wrapper">
+						<img src="assets/images/jacket.jpg" alt="Raw Silk Double-Breasted Blazer" class="product-card-image" loading="lazy" decoding="async">
+					</div>
+					<div class="product-card-details">
+						<span class="product-card-category">Tailoring</span>
+						<h3 class="product-card-title">Raw Silk Double-Breasted Blazer</h3>
+						<span class="product-card-price">৳42,000</span>
+					</div>
+				</a>
+
+				<!-- Item 3: Full-Bleed Panorama Dress Card -->
+				<a href="product-dress.html" class="product-card" aria-label="Minimalist Draped Column Dress — Evening Wear — ৳34,000">
+					<div class="product-card-image-wrapper">
+						<img src="assets/images/hero2.jpg" alt="Minimalist Draped Column Dress" class="product-card-image" loading="lazy" decoding="async">
+					</div>
+					<div class="product-card-details">
+						<span class="product-card-category">Evening Wear</span>
+						<h3 class="product-card-title">Minimalist Draped Column Dress</h3>
+						<span class="product-card-price">৳34,000</span>
+					</div>
+				</a>
+
+				<!-- Item 4: Knitwear -->
+				<a href="product.html" class="product-card" aria-label="Fine Gauge Wool Half-Zip — Knitwear — ৳18,500">
+					<div class="product-card-image-wrapper">
+						<img src="assets/images/halfzip.jpg" alt="Fine Gauge Wool Half-Zip" class="product-card-image" loading="lazy" decoding="async">
+					</div>
+					<div class="product-card-details">
+						<span class="product-card-category">Knitwear</span>
+						<h3 class="product-card-title">Fine Gauge Wool Half-Zip</h3>
+						<span class="product-card-price">৳18,500</span>
+					</div>
+				</a>
+
+				<!-- Item 5: Tote -->
+				<a href="product.html" class="product-card" aria-label="Sculpted Leather Tote — Accessories — ৳26,000">
+					<div class="product-card-image-wrapper">
+						<img src="assets/images/tote.jpg" alt="Sculpted Leather Tote" class="product-card-image" loading="lazy" decoding="async">
+					</div>
+					<div class="product-card-details">
+						<span class="product-card-category">Accessories</span>
+						<h3 class="product-card-title">Sculpted Leather Tote</h3>
+						<span class="product-card-price">৳26,000</span>
+					</div>
+				</a>
+
+				<!-- Item 6: Polo -->
+				<a href="product.html" class="product-card" aria-label="Merino Ribbed Knit Polo — Essentials — ৳16,500">
+					<div class="product-card-image-wrapper">
+						<img src="assets/images/polo.jpg" alt="Merino Ribbed Knit Polo" class="product-card-image" loading="lazy" decoding="async">
+					</div>
+					<div class="product-card-details">
+						<span class="product-card-category">Essentials</span>
+						<h3 class="product-card-title">Merino Ribbed Knit Polo</h3>
+						<span class="product-card-price">৳16,500</span>
+					</div>
+				</a>
+			</div>
+		</section>
+
+		<!-- 5. BRAND / DESIGNER SPOTLIGHT (EDITORIAL BANNER) -->
+		<section class="spotlight-section reveal" id="spotlight" aria-label="Designer and Craft Spotlight">
+			<div class="container">
+				<div class="spotlight-inner">
+					<!-- LEFT: Editorial Media Frame -->
+					<div class="spotlight-media-col">
+						<div class="spotlight-image-frame">
+							<img src="assets/images/spotlight.jpg" alt="Architecture for the Body" class="spotlight-image" loading="lazy" decoding="async">
+							<div class="spotlight-image-badge">
+								<span class="badge-dot" aria-hidden="true"></span>
+								<span class="badge-text">ATELIER WORKROOM</span>
+							</div>
+							<div class="spotlight-frame-accent" aria-hidden="true"></div>
+						</div>
+					</div>
+
+					<!-- RIGHT: Narrative Content -->
+					<div class="spotlight-content-col">
+						<div class="spotlight-tag-wrap">
+							<span class="season-tag">THE ATELIER MANIFESTO</span>
+						</div>
+						<h2 class="spotlight-title">Architecture for the Body</h2>
+						<p class="spotlight-desc">Every silhouette is drafted with strict geometric discipline. Crafted from ethically sourced superfine wool and organic silks, each garment requires over eighteen hours of hand-guided finishing.</p>
+
+						<!-- Craftsmanship Metrics -->
+						<div class="spotlight-metrics" role="list">
+							<div class="metric-item" role="listitem">
+								<span class="metric-number">18</span>
+								<span class="metric-label">Hours of Artisan Finishing</span>
+							</div>
+							<div class="metric-item" role="listitem">
+								<span class="metric-number">20</span>
+								<span class="metric-label">Pieces per Restricted Edition</span>
+							</div>
+							<div class="metric-item" role="listitem">
+								<span class="metric-number">100%</span>
+								<span class="metric-label">Natural & Organic Fibers</span>
+							</div>
+						</div>
+
+						<div class="spotlight-cta-wrap">
+							<a href="about.html" class="btn-luxury" aria-label="Discover the craft">
+								<span>DISCOVER THE CRAFT</span>
+								<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+									<polyline points="6 3 11 8 6 13"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 6. BESTSELLERS (THE ICONS / MOST COVETED) -->
+		<section class="section bestsellers-section container reveal" id="bestsellers">
+			<div class="section-header">
+				<span class="season-tag">THE ICONS</span>
+				<h2 class="section-title">MOST COVETED</h2>
+			</div>
+
+			<div class="bestsellers-grid">
+				<a href="product.html" class="bestseller-card" aria-label="Monochrome Structured Trench — Outerwear — ৳38,500">
+					<div class="bestseller-image-wrapper">
+						<img src="assets/images/overcoat.jpg" alt="Monochrome Structured Trench" class="bestseller-image" loading="lazy" decoding="async">
+					</div>
+					<div class="bestseller-details">
+						<span class="bestseller-category">Outerwear</span>
+						<h3 class="bestseller-title">Monochrome Structured Trench</h3>
+						<span class="bestseller-price">৳38,500</span>
+					</div>
+				</a>
+
+				<a href="product-jacket.html" class="bestseller-card" aria-label="Raw Silk Double-Breasted Blazer — Tailoring — ৳42,000">
+					<div class="bestseller-image-wrapper">
+						<img src="assets/images/jacket.jpg" alt="Raw Silk Double-Breasted Blazer" class="bestseller-image" loading="lazy" decoding="async">
+					</div>
+					<div class="bestseller-details">
+						<span class="bestseller-category">Tailoring</span>
+						<h3 class="bestseller-title">Raw Silk Double-Breasted Blazer</h3>
+						<span class="bestseller-price">৳42,000</span>
+					</div>
+				</a>
+
+				<a href="product-dress.html" class="bestseller-card" aria-label="Pleated Silk Evening Gown — Dresses — ৳48,000">
+					<div class="bestseller-image-wrapper">
+						<img src="assets/images/dress.jpg" alt="Pleated Silk Evening Gown" class="bestseller-image" loading="lazy" decoding="async">
+					</div>
+					<div class="bestseller-details">
+						<span class="bestseller-category">Dresses</span>
+						<h3 class="bestseller-title">Pleated Silk Evening Gown</h3>
+						<span class="bestseller-price">৳48,000</span>
+					</div>
+				</a>
+			</div>
+		</section>
+
+		<!-- 7. PHILOSOPHY STRIP -->
+		<section class="philosophy-strip reveal" id="philosophy">
+			<div class="philosophy-line-accent" aria-hidden="true"></div>
+			<blockquote class="philosophy-text">
+				"We don't design for seasons. We design for permanence."
+			</blockquote>
+			<div class="philosophy-line-accent" aria-hidden="true"></div>
+		</section>
+
+		<!-- 8. NEW ARRIVALS CAROUSEL (DRAGGABLE) -->
+		<section class="carousel-section reveal" id="new">
+			<div class="container">
+				<div class="section-header">
+					<span class="season-tag">JUST IN</span>
+					<h2 class="section-title">NEW ARRIVALS</h2>
+
+					<!-- Arrow controls -->
+					<div class="carousel-nav" role="group" aria-label="Carousel navigation">
+						<button class="carousel-arrow" id="carousel-prev" type="button" aria-label="Scroll to previous items">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+								<polyline points="10 3 5 8 10 13"/>
+							</svg>
+						</button>
+						<button class="carousel-arrow" id="carousel-next" type="button" aria-label="Scroll to next items">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+								<polyline points="6 3 11 8 6 13"/>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Carousel Track -->
+			<div class="carousel-container" id="carousel-container">
+				<div class="carousel-track">
+					<a href="product-dress.html" class="carousel-card" draggable="false">
+						<div class="carousel-card-image-wrapper">
+							<img src="assets/images/dress.jpg" alt="Silk Draped Dress" class="carousel-card-image" loading="lazy" decoding="async">
+						</div>
+						<div class="carousel-card-details">
+							<span class="carousel-card-category">Dresses</span>
+							<h3 class="carousel-card-title">Silk Draped Dress</h3>
+							<span class="carousel-card-price">৳34,000</span>
+						</div>
+					</a>
+
+					<a href="product-jacket.html" class="carousel-card" draggable="false">
+						<div class="carousel-card-image-wrapper">
+							<img src="assets/images/jacket.jpg" alt="Tailored Wool Blazer" class="carousel-card-image" loading="lazy" decoding="async">
+						</div>
+						<div class="carousel-card-details">
+							<span class="carousel-card-category">Tailoring</span>
+							<h3 class="carousel-card-title">Tailored Wool Blazer</h3>
+							<span class="carousel-card-price">৳42,000</span>
+						</div>
+					</a>
+
+					<a href="product.html" class="carousel-card" draggable="false">
+						<div class="carousel-card-image-wrapper">
+							<img src="assets/images/overcoat.jpg" alt="Cashmere Trench" class="carousel-card-image" loading="lazy" decoding="async">
+						</div>
+						<div class="carousel-card-details">
+							<span class="carousel-card-category">Outerwear</span>
+							<h3 class="carousel-card-title">Cashmere Trench</h3>
+							<span class="carousel-card-price">৳38,500</span>
+						</div>
+					</a>
+
+					<a href="product.html" class="carousel-card" draggable="false">
+						<div class="carousel-card-image-wrapper">
+							<img src="assets/images/halfzip.jpg" alt="Merino Knit Pullover" class="carousel-card-image" loading="lazy" decoding="async">
+						</div>
+						<div class="carousel-card-details">
+							<span class="carousel-card-category">Knitwear</span>
+							<h3 class="carousel-card-title">Merino Knit Pullover</h3>
+							<span class="carousel-card-price">৳18,500</span>
+						</div>
+					</a>
+
+					<a href="product.html" class="carousel-card" draggable="false">
+						<div class="carousel-card-image-wrapper">
+							<img src="assets/images/tote.jpg" alt="Sculpted Leather Tote" class="carousel-card-image" loading="lazy" decoding="async">
+						</div>
+						<div class="carousel-card-details">
+							<span class="carousel-card-category">Accessories</span>
+							<h3 class="carousel-card-title">Sculpted Leather Tote</h3>
+							<span class="carousel-card-price">৳26,000</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- 9. FLAGSHIP SHOWROOM / BOUTIQUE CTA -->
+		<section class="store-cta-section reveal" id="boutique" aria-label="Flagship boutique and private fittings">
+			<div class="container">
+				<div class="store-cta-inner">
+					<!-- LEFT: Showroom Details & Booking -->
+					<div class="store-cta-content-col">
+						<div class="store-tag-wrap">
+							<span class="season-tag">FLAGSHIP SHOWROOM & APPOINTMENTS</span>
+						</div>
+						<h2 class="store-cta-title">The Private Atelier</h2>
+						<p class="store-cta-desc">Experience bespoke fittings and private seasonal previews in our tranquil, architecturally designed showroom space.</p>
+
+						<!-- Information List -->
+						<div class="store-info-grid">
+							<div class="store-info-block">
+								<span class="store-info-label">Location</span>
+								<p class="store-info-val">Road 11, Banani — Dhaka, Bangladesh</p>
+							</div>
+							<div class="store-info-block">
+								<span class="store-info-label">Consultation Hours</span>
+								<p class="store-info-val">Tuesday – Sunday / 11:00 AM – 8:00 PM (Private Appointments)</p>
+							</div>
+							<div class="store-info-block">
+								<span class="store-info-label">Direct Concierge</span>
+								<p class="store-info-val"><a href="tel:+8801700000000">+880 1700-000000</a></p>
+							</div>
+						</div>
+
+						<!-- Action Buttons -->
+						<div class="store-cta-actions">
+							<a href="contact.html" class="btn-luxury" aria-label="Book private appointment">
+								<span>BOOK PRIVATE APPOINTMENT</span>
+								<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+									<polyline points="6 3 11 8 6 13"/>
+								</svg>
+							</a>
+							<a href="https://maps.google.com" class="btn-luxury-outline" target="_blank" rel="noopener noreferrer" aria-label="Get directions to showroom">
+								<span>GET DIRECTIONS</span>
+								<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+									<path d="M4 12L12 4M12 4H6M12 4V10"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+
+					<!-- RIGHT: Showroom Photography Frame -->
+					<div class="store-cta-media-col">
+						<div class="store-image-frame">
+							<img src="assets/images/store.jpg" alt="The Private Atelier Showroom" class="store-image" loading="lazy" decoding="async">
+							<div class="store-image-overlay" aria-hidden="true"></div>
+							<div class="store-status-pill">
+								<span class="status-indicator-dot" aria-hidden="true"></span>
+								<span>SHOWROOM OPEN</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 10. CUSTOMER REVIEWS & TRUST STRIP -->
+		<section class="reviews-section reveal" id="reviews">
+			<div class="container">
+				<div class="section-header">
+					<span class="season-tag">TESTIMONIALS</span>
+					<h2 class="section-title">EDITORIAL REVIEWS</h2>
+				</div>
+
+				<div class="reviews-grid">
+					<article class="review-card">
+						<div>
+							<div class="review-quote-icon" aria-hidden="true">&ldquo;</div>
+							<div class="review-rating" aria-label="Rating: 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+							<p class="review-text">The architectural drapery and attention to detail is unlike anything I've experienced. Every piece feels intentional and permanent.</p>
+						</div>
+						<div class="review-footer">
+							<p class="review-author">Nadia Rahman</p>
+							<span class="review-badge">VERIFIED CLIENT</span>
+						</div>
+					</article>
+
+					<article class="review-card">
+						<div>
+							<div class="review-quote-icon" aria-hidden="true">&ldquo;</div>
+							<div class="review-rating" aria-label="Rating: 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+							<p class="review-text">The weight and texture of the outerwear is unparalleled. It hangs with deliberate elegance. A perfect blend of warmth and minimalist form.</p>
+						</div>
+						<div class="review-footer">
+							<p class="review-author">Farhan Ahmed</p>
+							<span class="review-badge">VERIFIED CLIENT</span>
+						</div>
+					</article>
+
+					<article class="review-card">
+						<div>
+							<div class="review-quote-icon" aria-hidden="true">&ldquo;</div>
+							<div class="review-rating" aria-label="Rating: 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+							<p class="review-text">Restrained, elegant, and timeless. Ordering was frictionless and the presentation was premium from start to finish.</p>
+						</div>
+						<div class="review-footer">
+							<p class="review-author">Tahmina Chowdhury</p>
+							<span class="review-badge">VERIFIED CLIENT</span>
+						</div>
+					</article>
+				</div>
+
+				<!-- Trust Strip -->
+				<div class="trust-strip" role="list" aria-label="Trust guarantees">
+					<div class="trust-item" role="listitem">
+						<svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+							<rect x="1" y="3" width="15" height="13"/>
+							<polygon points="16 8 20 8 23 11 23 16 16 16 8"/>
+							<circle cx="5.5" cy="18.5" r="2.5"/>
+							<circle cx="18.5" cy="18.5" r="2.5"/>
+						</svg>
+						<span>Nationwide Delivery</span>
+					</div>
+					<div class="trust-item" role="listitem">
+						<svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+							<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+						</svg>
+						<span>Artisan Craftsmanship</span>
+					</div>
+					<div class="trust-item" role="listitem">
+						<svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+							<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+							<path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+						</svg>
+						<span>Secure Checkout</span>
+					</div>
+					<div class="trust-item" role="listitem">
+						<svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+							<line x1="12" y1="1" x2="12" y2="23"/>
+							<path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+						</svg>
+						<span>Cash on Delivery</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 11. COUNTDOWN TIMER & GIFT BOX -->
+		<section class="timer-section reveal" id="timer-section" aria-label="Archive event countdown">
+			<div class="container">
+				<span class="timer-overline">EXCLUSIVE ARCHIVE EVENT</span>
+				<h2 class="timer-title">THE ARCHIVE RELEASE</h2>
+				<p class="timer-teaser">A limited window to acquire archived architectural silhouettes from past edited collections. Re-released in restricted runs.</p>
+
+				<!-- 3D Gift Box Stage -->
+				<div class="gift-box-stage" id="gift-box-stage" aria-hidden="true">
+					<div class="gift-box-base">
+						<div class="gift-box-glow" id="gift-box-glow"></div>
+						
+						<!-- The Lid with 3D tilt -->
+						<div class="gift-box-lid" id="gift-box-lid">
+							<div class="timer-display" id="timer-display" role="timer" aria-live="off">
+								<div class="timer-block">
+									<span class="timer-value rose-gold-metallic" id="days-val">
+										<span class="timer-digit">0</span><span class="timer-digit">6</span>
+									</span>
+									<span class="timer-label">DAYS</span>
+								</div>
+								<span class="timer-separator" aria-hidden="true">:</span>
+								<div class="timer-block">
+									<span class="timer-value rose-gold-metallic" id="hours-val">
+										<span class="timer-digit">1</span><span class="timer-digit">8</span>
+									</span>
+									<span class="timer-label">HOURS</span>
+								</div>
+								<span class="timer-separator" aria-hidden="true">:</span>
+								<div class="timer-block">
+									<span class="timer-value rose-gold-metallic" id="minutes-val">
+										<span class="timer-digit">4</span><span class="timer-digit">2</span>
+									</span>
+									<span class="timer-label">MINUTES</span>
+								</div>
+								<span class="timer-separator" aria-hidden="true">:</span>
+								<div class="timer-block">
+									<span class="timer-value rose-gold-metallic" id="seconds-val">
+										<span class="timer-digit">1</span><span class="timer-digit">5</span>
+									</span>
+									<span class="timer-label">SECONDS</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="gift-ribbon"></div>
+						<div class="gift-ribbon-vertical"></div>
+						<div class="gift-bow"><span class="gift-bow-center"></span></div>
+
+						<p class="timer-complete-text" id="timer-complete-text">THE ARCHIVE IS NOW OPEN</p>
+					</div>
+					<div class="gift-box-shadow" id="gift-box-shadow"></div>
+				</div>
+
+				<div class="timer-cta-wrap">
+					<a href="shop.html" class="btn-luxury" aria-label="Request early access to archive">
+						<span>REQUEST EARLY ACCESS</span>
+						<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+							<polyline points="6 3 11 8 6 13"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- 12. INNER CIRCLE NEWSLETTER -->
+		<section class="newsletter-section" id="newsletter" aria-label="Newsletter signup">
+			<div class="container">
+				<div class="newsletter-inner">
+					<h2 class="newsletter-title">Join the Inner Circle</h2>
+					<p class="newsletter-subline">Receive early access to seasonal private sales, restricted capsule drops, and bespoke atelier invitations.</p>
+					
+					<form class="newsletter-form-wrap" action="#" method="post" onsubmit="event.preventDefault(); alert('Thank you for joining the Atelier Inner Circle.');">
+						<input type="email" class="newsletter-input" name="EMAIL" placeholder="Enter your email address" required aria-label="Email address for newsletter">
+						<button type="submit" class="newsletter-submit">SUBSCRIBE</button>
+					</form>
+					<p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<!-- ══════════════════════════════════════════════════════
+	     FOOTER
+	     ══════════════════════════════════════════════════════ -->
+	<footer class="footer" id="footer">
+		<!-- Brand Logo -->
+		<a href="index.html" class="footer-brand" aria-label="ATELIER — return to homepage">
+			ATELIER
+		</a>
+
+		<!-- Links -->
+		<nav class="footer-links" aria-label="Footer navigation">
+			<a href="shop.html">COLLECTIONS</a>
+			<a href="about.html">ABOUT</a>
+			<a href="contact.html">SHOWROOM</a>
+			<a href="track-order.html">TRACK ORDER</a>
+			<a href="terms.html">TERMS & PRIVACY</a>
+		</nav>
+
+		<!-- 3-Column Footer Widgets -->
+		<div class="footer-widgets">
+			<div class="container">
+				<div class="footer-widgets-grid">
+					<div class="footer-widget-col">
+						<h4>THE ATELIER</h4>
+						<p>Architectural silhouettes tailored in limited editions. Designed for permanence and crafted with ethical discipline.</p>
+					</div>
+					<div class="footer-widget-col">
+						<h4>FLAGSHIP SHOWROOM</h4>
+						<p>Road 11, Banani<br>Dhaka, Bangladesh<br>Tue–Sun, 11am–8pm</p>
+					</div>
+					<div class="footer-widget-col">
+						<h4>CONCIERGE</h4>
+						<p>contact@atelier.com<br>+880 1700-000000<br>WhatsApp Inquiries Available</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Payment Method Icons -->
+		<div class="footer-payment" aria-label="Accepted payment methods">
+			<span class="footer-payment-label">WE ACCEPT</span>
+			<div class="footer-payment-icons">
+				<span class="payment-icon" title="bKash">bKash</span>
+				<span class="payment-icon" title="Nagad">Nagad</span>
+				<span class="payment-icon" title="Cash on Delivery">COD</span>
+				<span class="payment-icon" title="Bank Transfer">Bank</span>
+			</div>
+		</div>
+
+		<!-- Copyright -->
+		<p class="footer-copyright">
+			&copy; 2026 ATELIER. All rights reserved. Built with precision.
+		</p>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/main.js" defer></script>
+	<script src="assets/js/countdown.js" defer></script>
+
+</body>
+</html>

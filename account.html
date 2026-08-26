@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#080808">
+	<title>My Account & Private Portfolio — ATELIER</title>
+	
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="assets/css/global.css">
+	<link rel="stylesheet" href="assets/css/header.css">
+	<link rel="stylesheet" href="assets/css/footer.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+	<style>
+		.account-layout { display: grid; grid-template-columns: 280px 1fr; gap: clamp(2rem, 5vw, 5rem); margin: 3rem 0 8rem; }
+		.account-nav { display: flex; flex-direction: column; gap: 0.5rem; border-right: 1px solid rgba(240,237,232,0.06); padding-right: 2rem; }
+		.account-nav-btn { background: none; border: none; text-align: left; color: var(--color-muted); font-family: var(--font-body); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.8rem 1rem; cursor: pointer; transition: all var(--transition-fast); }
+		.account-nav-btn.active, .account-nav-btn:hover { color: var(--accent-rose-gold); background: rgba(180,131,107,0.06); border-left: 2px solid var(--accent-rose-gold); }
+		.account-card { background: #0c0c0c; border: 1px solid rgba(240,237,232,0.06); padding: clamp(2rem, 4vw, 3rem); }
+		.account-welcome { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; margin-bottom: 1rem; }
+		.account-text { color: var(--color-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 2.5rem; }
+		.orders-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+		.orders-table th { text-align: left; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-rose-gold); padding-bottom: 1rem; border-bottom: 1px solid rgba(240,237,232,0.08); }
+		.orders-table td { padding: 1.25rem 0; font-size: 0.88rem; border-bottom: 1px solid rgba(240,237,232,0.04); }
+		.order-status-badge { display: inline-block; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 50px; background: rgba(85,199,130,0.1); color: #55c782; border: 1px solid rgba(85,199,130,0.3); }
+		@media (max-width: 900px) { .account-layout { grid-template-columns: 1fr; } .account-nav { border-right: none; border-bottom: 1px solid rgba(240,237,232,0.06); padding-bottom: 1.5rem; flex-direction: row; overflow-x: auto; } }
+	</style>
+</head>
+<body class="page-template-default page page-id-account woocommerce-account">
+
+	<a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
+
+	<!-- Header Navigation -->
+	<nav class="nav" id="main-nav" aria-label="Primary navigation">
+		<div class="nav-container container">
+			<div class="nav-left" role="list">
+				<a href="shop.html" class="nav-link" role="listitem">SHOP</a>
+				<a href="about.html" class="nav-link" role="listitem">ABOUT</a>
+				<a href="contact.html" class="nav-link" role="listitem">SHOWROOM</a>
+			</div>
+			<a href="index.html" class="nav-brand" aria-label="ATELIER — return to homepage">ATELIER</a>
+			<div class="nav-right">
+				<a href="#search" class="nav-icon-link search-trigger" aria-label="Search creations">SEARCH</a>
+				<a href="account.html" class="nav-icon-link active" aria-label="Account">ACCOUNT</a>
+				<a href="cart.html" class="nav-icon-link" aria-label="View shopping cart">
+					CART <span class="nav-cart-count">(2)</span>
+				</a>
+			</div>
+			<button class="hamburger" id="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+				<span class="hamburger-line" aria-hidden="true"></span>
+				<span class="hamburger-line" aria-hidden="true"></span>
+			</button>
+		</div>
+		<div class="mobile-menu" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+			<nav class="mobile-menu-links">
+				<a href="index.html" class="mobile-link">HOME</a>
+				<a href="shop.html" class="mobile-link">SHOP</a>
+				<a href="about.html" class="mobile-link">ABOUT</a>
+				<a href="contact.html" class="mobile-link">SHOWROOM & CONTACT</a>
+				<a href="account.html" class="mobile-link">MY ACCOUNT</a>
+				<a href="cart.html" class="mobile-link">SHOPPING BAG</a>
+			</nav>
+		</div>
+	</nav>
+
+	<!-- Search Modal -->
+	<div class="search-modal" id="search-modal" aria-hidden="true" role="dialog" aria-label="Search Atelier Collections">
+		<button class="search-modal-close" id="search-modal-close" aria-label="Close search">&times;</button>
+		<div class="search-modal-inner">
+			<div class="search-input-wrap">
+				<input type="search" id="header-search-input" placeholder="Search creations, coats, silks..." autocomplete="off">
+			</div>
+			<div class="search-suggestions">
+				<span class="search-suggestions-label">Popular Searches:</span>
+				<a href="shop.html?cat=outerwear" class="search-pill">Structured Trench</a>
+				<a href="shop.html?cat=dresses" class="search-pill">Silk Column Dress</a>
+				<a href="shop.html?cat=tailoring" class="search-pill">Double-Breasted Blazer</a>
+				<a href="shop.html?cat=knitwear" class="search-pill">Merino Knitwear</a>
+			</div>
+		</div>
+	</div>
+
+	<header class="page-header">
+		<div class="container">
+			<span class="season-tag" style="margin-bottom: 1.2rem; display: inline-block;">CLIENT PORTAL</span>
+			<h1 class="page-title">MY ATELIER ACCOUNT</h1>
+			<p class="page-subline">Manage your portfolio, active tailoring commissions, and delivery destinations.</p>
+		</div>
+	</header>
+
+	<main id="main-content" role="main" class="container">
+		<header style="margin-top: 4rem;">
+			<span class="season-tag">CLIENT PORTAL</span>
+			<h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 300; letter-spacing: 0.04em;">MY ATELIER ACCOUNT</h1>
+		</header>
+
+		<div class="account-layout">
+			<!-- Navigation Sidebar -->
+			<aside class="account-nav" aria-label="Account Navigation">
+				<button type="button" class="account-nav-btn active">DASHBOARD</button>
+				<button type="button" class="account-nav-btn">ACQUISITION HISTORY</button>
+				<button type="button" class="account-nav-btn">SAVED ADDRESSES</button>
+				<button type="button" class="account-nav-btn">BESPOKE MEASUREMENTS</button>
+				<button type="button" class="account-nav-btn">LOGOUT</button>
+			</aside>
+
+			<!-- Account Content -->
+			<div class="account-card">
+				<h2 class="account-welcome">Welcome back, Nadia</h2>
+				<p class="account-text">From your private client dashboard, you can track current tailoring commissions, view your acquisition history, and manage verified delivery destinations.</p>
+
+				<h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 300; margin-bottom: 1rem; color: var(--accent-rose-gold);">Recent Orders & Commissions</h3>
+				<table class="orders-table">
+					<thead>
+						<tr>
+							<th>ORDER</th>
+							<th>DATE</th>
+							<th>STATUS</th>
+							<th>TOTAL</th>
+							<th>ACTION</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>#ATL-8942</td>
+							<td>August 24, 2026</td>
+							<td><span class="order-status-badge">In Transit</span></td>
+							<td>৳38,500 for 1 item</td>
+							<td><a href="track-order.html" style="color: var(--accent-rose-gold); text-decoration: underline;">Track Order</a></td>
+						</tr>
+						<tr>
+							<td>#ATL-7108</td>
+							<td>June 12, 2026</td>
+							<td><span class="order-status-badge" style="background: rgba(255,255,255,0.05); color: var(--color-light); border-color: rgba(255,255,255,0.2);">Delivered</span></td>
+							<td>৳42,000 for 1 item</td>
+							<td><a href="product.html" style="color: var(--accent-rose-gold); text-decoration: underline;">View Piece</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+
+	<!-- Footer -->
+	<footer class="footer" id="footer">
+		<a href="index.html" class="footer-brand" aria-label="ATELIER — return to homepage">ATELIER</a>
+		<nav class="footer-links" aria-label="Footer navigation">
+			<a href="shop.html">COLLECTIONS</a>
+			<a href="about.html">ABOUT</a>
+			<a href="contact.html">SHOWROOM</a>
+			<a href="track-order.html">TRACK ORDER</a>
+			<a href="terms.html">TERMS & PRIVACY</a>
+		</nav>
+		<p class="footer-copyright">&copy; 2026 ATELIER. All rights reserved.</p>
+	</footer>
+
+	<script src="assets/js/main.js" defer></script>
+</body>
+</html>

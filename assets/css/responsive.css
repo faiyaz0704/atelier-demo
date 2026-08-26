@@ -1,0 +1,293 @@
+/* ==========================================================
+   ATELIER — Responsive Breakpoints
+   All overrides use body.atelier-body prefix for specificity
+   instead of !important — Elementor compatible.
+   ========================================================== */
+
+/* ── Tablet (≤ 1024px) ────────────────────────────────── */
+@media (max-width: 1024px) {
+
+	/* Category grid: 2 columns */
+	.category-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	/* Editorial product grid: normalize nth-child positions */
+	body.atelier-body .product-grid .product-card:nth-child(n) {
+		width: 100%;
+		justify-self: stretch;
+		padding: 0;
+		margin-top: 0;
+	}
+
+	.product-grid {
+		gap: 20px;
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(2) {
+		padding-top: 30px;
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(3) {
+		grid-column: 1 / -1;
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(n) .product-card-image-wrapper {
+		aspect-ratio: 3/4;
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(3) .product-card-image-wrapper {
+		aspect-ratio: 16/9;
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(3) .product-card-details {
+		position: relative;
+		background: none;
+		padding: 1.25rem 0.25rem 0.5rem;
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(3) .product-card-title {
+		font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(3) .product-card-price {
+		font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(6) {
+		grid-column: 2;
+		grid-row: auto;
+	}
+
+	/* Product detail: stack columns */
+	.product-hero-inner {
+		grid-template-columns: 1fr;
+		gap: 3rem;
+	}
+
+	.product-gallery {
+		position: static;
+	}
+
+	/* Carousel cards: smaller */
+	.carousel-card {
+		width: 280px;
+	}
+
+	/* Contact layout: stack */
+	.contact-layout {
+		grid-template-columns: 1fr;
+		gap: 4rem;
+	}
+
+	/* About origin blocks: stack */
+	.origin-block,
+	.origin-block.reversed {
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+	}
+
+	.origin-block.reversed .origin-image-col {
+		order: 0;
+	}
+
+	/* Shop grid: 2 columns */
+	.shop-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* ── Mobile (≤ 768px) ─────────────────────────────────── */
+@media (max-width: 768px) {
+
+	/* Nav: show hamburger, hide desktop links */
+	.nav-left,
+	.nav-right {
+		display: none;
+	}
+
+	.hamburger {
+		display: flex;
+	}
+
+	/* Category grid: 2 columns */
+	.category-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	/* Editorial product grid: single column */
+	.product-grid {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(n) {
+		grid-column: 1;
+		grid-row: auto;
+		width: 100%;
+		justify-self: stretch;
+		padding: 0;
+		margin-top: 0;
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(n) .product-card-image-wrapper {
+		aspect-ratio: 3/4;
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(3) .product-card-details {
+		position: relative;
+		background: none;
+		padding: 1.25rem 0.25rem 0.5rem;
+		width: auto;
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(3) .product-card-title {
+		font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+	}
+
+	body.atelier-body .product-grid .product-card:nth-child(3) .product-card-price {
+		font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+	}
+
+	/* Bestsellers: single column */
+	.bestsellers-grid {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+
+	/* Reviews: single column */
+	.reviews-grid {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+
+	/* Carousel cards: smaller */
+	.carousel-card {
+		width: 260px;
+	}
+
+	/* Gift box: smaller */
+	.gift-box-stage {
+		max-width: 320px;
+	}
+
+	/* Gallery thumbs: horizontal scroll */
+	.gallery-thumbnails {
+		overflow-x: auto;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		flex-wrap: nowrap;
+		padding-bottom: 4px;
+	}
+
+	.gallery-thumbnails::-webkit-scrollbar { display: none; }
+
+	.gallery-thumb {
+		flex: 0 0 80px;
+		min-width: 80px;
+	}
+
+	/* Size buttons */
+	.size-buttons {
+		gap: 10px;
+	}
+
+	.size-btn {
+		min-width: 50px;
+	}
+
+	/* Shop grid: single column */
+	.shop-grid {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+
+	/* Filter bar: wrap */
+	.filter-bar-inner {
+		flex-direction: column;
+		gap: 1rem;
+		align-items: stretch;
+	}
+
+	.filter-categories {
+		overflow-x: auto;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		flex-wrap: nowrap;
+		padding-bottom: 4px;
+	}
+
+	.filter-categories::-webkit-scrollbar { display: none; }
+
+	/* Newsletter: stack */
+	.newsletter-form-wrap {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.newsletter-input {
+		border-right: 1px solid rgba(240, 237, 232, 0.15);
+		border-bottom: none;
+	}
+
+	/* Values grid: stack */
+	.values-grid {
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+	}
+
+	/* Posts grid: single column */
+	.atelier-posts-grid {
+		grid-template-columns: 1fr;
+	}
+
+	/* Shop header */
+	.shop-header-title {
+		font-size: clamp(2rem, 6vw, 3rem);
+	}
+
+	/* About hero */
+	.about-hero-content h1 {
+		font-size: clamp(2.5rem, 8vw, 4rem);
+	}
+}
+
+/* ── Small Mobile (≤ 480px) ───────────────────────────── */
+@media (max-width: 480px) {
+
+	.category-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.product-name {
+		font-size: 1.8rem;
+	}
+
+	.page-title {
+		font-size: clamp(2rem, 7vw, 3rem);
+	}
+
+	.review-card {
+		padding: 2rem 1.5rem;
+	}
+
+	.footer-links {
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.atelier-posts-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.post-nav-inner {
+		grid-template-columns: 1fr;
+	}
+
+	.post-nav-next {
+		border-left: none;
+		border-top: 1px solid rgba(240, 237, 232, 0.06);
+		padding-left: 0;
+		text-align: left;
+	}
+}

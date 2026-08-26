@@ -1,0 +1,251 @@
+/* ==========================================================
+   ATELIER — Shop Page
+   ========================================================== */
+
+/* ── Shop Header ──────────────────────────────────────── */
+.shop-header {
+	padding-top: calc(var(--header-height) + clamp(5rem, 10vw, 10rem));
+	padding-bottom: clamp(4rem, 6vw, 6rem);
+	text-align: center;
+	background-color: var(--bg-deep-black);
+}
+
+.shop-header-content {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.shop-header-overline {
+	font-size: 0.65rem;
+	letter-spacing: 0.5em;
+	color: var(--accent-rose-gold);
+	text-transform: uppercase;
+	font-weight: 400;
+	display: block;
+	margin-bottom: 1.5rem;
+}
+
+.shop-header-rule {
+	width: 40px;
+	height: 1px;
+	background-color: var(--accent-rose-gold);
+	margin: 0 auto 1.5rem;
+	opacity: 0.4;
+}
+
+.shop-header-title {
+	font-family: var(--font-display);
+	font-size: clamp(2.8rem, 6vw, 5rem);
+	font-weight: 300;
+	letter-spacing: 0.12em;
+	margin-bottom: 1rem;
+}
+
+.shop-header-subline {
+	font-size: 0.95rem;
+	color: var(--color-muted);
+	letter-spacing: 0.05em;
+}
+
+/* ── Filter Bar ───────────────────────────────────────── */
+.filter-bar {
+	position: sticky;
+	top: var(--header-height);
+	z-index: 100;
+	background-color: rgba(8, 8, 8, 0.95);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-top: 1px solid rgba(240, 237, 232, 0.04);
+	border-bottom: 1px solid rgba(240, 237, 232, 0.04);
+	padding: 1rem 0;
+}
+
+.filter-bar-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.filter-categories {
+	display: flex;
+	gap: clamp(0.8rem, 2vw, 2rem);
+	flex-wrap: wrap;
+}
+
+.filter-btn {
+	font-family: var(--font-body);
+	font-size: 0.72rem;
+	font-weight: 400;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.4rem 0;
+	position: relative;
+	transition: color var(--transition-fast);
+	white-space: nowrap;
+}
+
+.filter-btn::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 1px;
+	background-color: var(--accent-rose-gold);
+	transition: width var(--transition-medium);
+}
+
+.filter-btn:hover {
+	color: var(--color-light);
+}
+
+.filter-btn.active {
+	color: var(--color-light);
+}
+
+.filter-btn.active::after {
+	width: 100%;
+}
+
+/* ── Sort Dropdown ────────────────────────────────────── */
+.sort-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	flex-shrink: 0;
+}
+
+.sort-label {
+	font-size: 0.7rem;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: var(--color-ghost);
+	white-space: nowrap;
+}
+
+.sort-select {
+	appearance: none;
+	-webkit-appearance: none;
+	background: transparent;
+	border: 1px solid rgba(240, 237, 232, 0.12);
+	color: var(--color-light);
+	font-family: var(--font-body);
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	padding: 0.5rem 2rem 0.5rem 0.8rem;
+	cursor: pointer;
+	transition: border-color var(--transition-fast);
+}
+
+.sort-select:hover {
+	border-color: rgba(180, 131, 107, 0.4);
+}
+
+.sort-select option {
+	background-color: var(--bg-deep-black);
+	color: var(--color-light);
+}
+
+.sort-chevron {
+	font-size: 0.6rem;
+	color: var(--color-ghost);
+	margin-left: -1.5rem;
+	pointer-events: none;
+}
+
+/* ── Shop Grid ────────────────────────────────────────── */
+.shop-grid-section {
+	padding-top: clamp(3rem, 5vw, 5rem);
+	padding-bottom: clamp(5rem, 8vw, 8rem);
+}
+
+.shop-result-count {
+	font-size: 0.75rem;
+	color: var(--color-ghost);
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	margin-bottom: clamp(2rem, 3vw, 3rem);
+}
+
+/* WooCommerce outputs ul.products — we style that */
+.shop-grid,
+ul.products {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: clamp(1.5rem, 3vw, 3rem);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* Product cards within the shop grid — specificity override for homepage nth-child widths */
+body.atelier-body ul.products .product-card,
+body.atelier-body .shop-grid .product-card {
+	width: 100%;
+}
+
+ul.products .product-card .product-card-image-wrapper {
+	aspect-ratio: 3/4;
+}
+
+/* ── No Products ──────────────────────────────────────── */
+.atelier-no-products {
+	text-align: center;
+	padding: clamp(4rem, 8vw, 8rem) 0;
+}
+
+.atelier-no-products p {
+	font-size: 1rem;
+	color: var(--color-muted);
+}
+
+/* ── WooCommerce Pagination ───────────────────────────── */
+.woocommerce-pagination {
+	margin-top: clamp(3rem, 5vw, 5rem);
+	text-align: center;
+}
+
+.woocommerce-pagination ul {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+	list-style: none;
+	padding: 0;
+}
+
+.woocommerce-pagination ul li a,
+.woocommerce-pagination ul li span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 40px;
+	height: 40px;
+	padding: 0 0.5rem;
+	font-size: 0.8rem;
+	letter-spacing: 0.1em;
+	color: var(--color-muted);
+	border: 1px solid rgba(240, 237, 232, 0.1);
+	transition: border-color var(--transition-fast), color var(--transition-fast);
+	text-decoration: none;
+}
+
+.woocommerce-pagination ul li a:hover {
+	border-color: var(--accent-rose-gold);
+	color: var(--accent-rose-gold);
+}
+
+.woocommerce-pagination ul li span.current {
+	border-color: var(--accent-rose-gold);
+	color: var(--color-light);
+	background-color: rgba(180, 131, 107, 0.1);
+}
+
+/* ── Card animation on filter ─────────────────────────── */
+.product-card[data-hidden="true"] {
+	display: none;
+}

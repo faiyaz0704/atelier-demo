@@ -1,0 +1,342 @@
+/* ==========================================================
+   ATELIER — Contact Page
+   ========================================================== */
+
+/* ── Contact Layout ───────────────────────────────────── */
+.contact-layout {
+	display: grid;
+	grid-template-columns: 1.2fr 0.8fr;
+	gap: clamp(4rem, 6vw, 8rem);
+	padding-bottom: clamp(5rem, 8vw, 8rem);
+}
+
+/* ── Contact Form ─────────────────────────────────────── */
+.contact-form-wrap {
+	width: 100%;
+}
+
+/* CF7 / WPForms override styles */
+.contact-form-wrap .wpcf7-form,
+.contact-form-wrap .wpforms-form {
+	width: 100%;
+}
+
+.contact-form-wrap input[type="text"],
+.contact-form-wrap input[type="email"],
+.contact-form-wrap input[type="tel"],
+.contact-form-wrap select,
+.contact-form-wrap textarea {
+	width: 100%;
+	background: transparent;
+	border: 1px solid rgba(240, 237, 232, 0.12);
+	color: var(--color-light);
+	font-family: var(--font-body);
+	font-size: 0.85rem;
+	padding: 0.9rem 1.1rem;
+	transition: border-color var(--transition-fast);
+	letter-spacing: 0.04em;
+}
+
+.contact-form-wrap input:hover,
+.contact-form-wrap select:hover,
+.contact-form-wrap textarea:hover {
+	border-color: rgba(180, 131, 107, 0.35);
+}
+
+.contact-form-wrap input:focus,
+.contact-form-wrap select:focus,
+.contact-form-wrap textarea:focus {
+	border-color: var(--accent-rose-gold);
+	outline: none;
+}
+
+.contact-form-wrap input::placeholder,
+.contact-form-wrap textarea::placeholder {
+	color: var(--color-ghost);
+}
+
+.contact-form-wrap select {
+	appearance: none;
+	-webkit-appearance: none;
+	cursor: pointer;
+}
+
+.contact-form-wrap select option {
+	background-color: var(--bg-deep-black);
+	color: var(--color-light);
+}
+
+.contact-form-wrap textarea {
+	min-height: 160px;
+	resize: vertical;
+}
+
+.contact-form-wrap label {
+	display: block;
+	font-size: 0.72rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	margin-bottom: 0.5rem;
+	font-weight: 400;
+}
+
+.contact-form-wrap input[type="submit"],
+.contact-form-wrap .wpcf7-submit,
+.form-submit {
+	width: 100%;
+	height: 52px;
+	background-color: var(--accent-rose-gold);
+	color: #080808;
+	border: none;
+	font-family: var(--font-body);
+	font-size: 0.78rem;
+	font-weight: 500;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background-color var(--transition-fast);
+	margin-top: 1rem;
+}
+
+.contact-form-wrap input[type="submit"]:hover,
+.form-submit:hover {
+	background-color: #a07260;
+}
+
+/* ── Contact Info Sidebar ─────────────────────────────── */
+.contact-info {
+	padding-top: 0.5rem;
+}
+
+.contact-info-brand {
+	font-family: var(--font-display);
+	font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+	font-weight: 300;
+	letter-spacing: 0.35em;
+	margin-bottom: clamp(2.5rem, 4vw, 4rem);
+	color: var(--color-light);
+	opacity: 0.3;
+}
+
+.info-block {
+	margin-bottom: 2rem;
+}
+
+.info-label {
+	font-size: 0.65rem;
+	letter-spacing: 0.35em;
+	text-transform: uppercase;
+	color: var(--accent-rose-gold);
+	font-weight: 400;
+	margin-bottom: 0.4rem;
+}
+
+.info-text {
+	font-size: 0.9rem;
+	color: var(--color-muted);
+	line-height: 1.6;
+}
+
+.info-text a {
+	color: var(--color-muted);
+	text-decoration: none;
+}
+
+.info-text a:hover {
+	color: var(--accent-rose-gold);
+}
+
+.social-links {
+	display: flex;
+	gap: 1.5rem;
+	margin-top: 2.5rem;
+	padding-top: 2.5rem;
+	border-top: 1px solid rgba(240, 237, 232, 0.06);
+}
+
+.social-link {
+	font-size: 0.75rem;
+	letter-spacing: 0.15em;
+	color: var(--color-muted);
+	transition: color var(--transition-fast);
+	text-decoration: none;
+}
+
+.social-link:hover {
+	color: var(--accent-rose-gold);
+}
+
+/* ── FAQ Section ──────────────────────────────────────── */
+.faq-section {
+	padding-top: clamp(4rem, 6vw, 6rem);
+	padding-bottom: clamp(5rem, 8vw, 8rem);
+	border-top: 1px solid rgba(240, 237, 232, 0.04);
+}
+
+.faq-title {
+	font-family: var(--font-display);
+	font-size: clamp(1.8rem, 3vw, 2.5rem);
+	font-weight: 300;
+	letter-spacing: 0.06em;
+	margin-bottom: clamp(2.5rem, 4vw, 4rem);
+	text-align: center;
+}
+
+.faq-list {
+	max-width: 800px;
+	margin: 0 auto;
+	list-style: none;
+	padding: 0;
+}
+
+.faq-item {
+	border-bottom: 1px solid rgba(240, 237, 232, 0.06);
+}
+
+.faq-trigger {
+	width: 100%;
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1.3rem 0;
+	color: var(--color-light);
+	font-family: var(--font-body);
+	font-size: 0.88rem;
+	font-weight: 400;
+	letter-spacing: 0.03em;
+	text-align: left;
+	transition: color var(--transition-fast);
+	gap: 1rem;
+}
+
+.faq-trigger:hover {
+	color: var(--accent-rose-gold);
+}
+
+.faq-icon {
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+	position: relative;
+	color: var(--accent-rose-gold);
+}
+
+.faq-icon::before,
+.faq-icon::after {
+	content: '';
+	position: absolute;
+	background-color: currentColor;
+	transition: transform var(--transition-medium), opacity var(--transition-medium);
+}
+
+.faq-icon::before {
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	transform: translateY(-50%);
+}
+
+.faq-icon::after {
+	top: 0;
+	left: 50%;
+	width: 1px;
+	height: 100%;
+	transform: translateX(-50%);
+}
+
+.faq-trigger[aria-expanded="true"] .faq-icon::after {
+	transform: translateX(-50%) scaleY(0);
+	opacity: 0;
+}
+
+.faq-body {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.faq-body[aria-hidden="false"] {
+	max-height: 200px;
+}
+
+.faq-answer {
+	font-size: 0.88rem;
+	line-height: 1.8;
+	color: var(--color-muted);
+	padding-bottom: 1.5rem;
+}
+
+/* ── Form Success State ───────────────────────────────── */
+.form-success {
+	display: none;
+	text-align: center;
+	padding: 4rem 2rem;
+}
+
+.form-success.visible {
+	display: block;
+}
+
+.form-success-icon {
+	font-size: 2rem;
+	color: var(--accent-rose-gold);
+	display: block;
+	margin-bottom: 1.5rem;
+}
+
+.form-success-text {
+	font-size: 1rem;
+	color: var(--color-muted);
+	line-height: 1.7;
+	margin-bottom: 2rem;
+}
+
+.form-success-link {
+	color: var(--accent-rose-gold);
+	font-size: 0.8rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+/* ── Contact Success State ───────────────────────────── */
+.atelier-contact-success {
+	text-align: center;
+	padding: 4rem 2rem;
+	opacity: 0;
+	transition: opacity 0.6s ease;
+}
+
+.atelier-contact-success .success-icon {
+	font-size: 2.5rem;
+	color: var(--accent-rose-gold);
+	margin-bottom: 1.5rem;
+}
+
+.atelier-contact-success .success-title {
+	font-family: var(--font-display);
+	font-size: 1.8rem;
+	font-weight: 300;
+	letter-spacing: 0.05em;
+	margin-bottom: 0.75rem;
+	color: var(--color-light);
+}
+
+.atelier-contact-success .success-text {
+	color: var(--color-muted);
+	font-size: 0.9rem;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+/* ── Inline Validation Errors ────────────────────────── */
+.atelier-field-error {
+	color: var(--accent-rose-gold);
+	font-size: 0.75rem;
+	margin-top: 4px;
+	display: block;
+}

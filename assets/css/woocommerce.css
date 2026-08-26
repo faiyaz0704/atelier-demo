@@ -1,0 +1,237 @@
+/* ==========================================================
+   ATELIER — WooCommerce Global Overrides
+   Applied on all pages when WC is active.
+   ========================================================== */
+
+/* ── WC Notices ───────────────────────────────────────── */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+	padding: 1rem 1.5rem;
+	margin-bottom: 1.5rem;
+	font-size: 0.88rem;
+	border-left: 3px solid var(--accent-rose-gold);
+	background-color: rgba(180, 131, 107, 0.05);
+	color: var(--color-light);
+}
+
+.woocommerce-error {
+	border-left-color: #c44;
+}
+
+.woocommerce-message::before,
+.woocommerce-info::before,
+.woocommerce-error::before {
+	display: none;
+}
+
+.woocommerce-message a,
+.woocommerce-info a {
+	color: var(--accent-rose-gold);
+}
+
+/* ── WC Buttons (global) ─────────────────────────────── */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	background-color: var(--accent-rose-gold);
+	color: #080808;
+	border: none;
+	font-family: var(--font-body);
+	font-size: 0.78rem;
+	font-weight: 500;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	padding: 0.8rem 2rem;
+	cursor: pointer;
+	transition: background-color var(--transition-fast);
+	text-decoration: none;
+	display: inline-block;
+	line-height: 1.5;
+}
+
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+	background-color: #a07260;
+	color: #080808;
+}
+
+.woocommerce a.button.alt,
+.woocommerce button.button.alt {
+	background-color: var(--accent-rose-gold);
+	color: #080808;
+}
+
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover {
+	background-color: #a07260;
+}
+
+/* ── WC Breadcrumb ────────────────────────────────────── */
+.woocommerce-breadcrumb {
+	padding-top: calc(var(--header-height) + 2rem);
+	padding-bottom: 1.5rem;
+	font-size: 0.72rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+}
+
+.woocommerce-breadcrumb a {
+	color: var(--color-muted);
+	text-decoration: none;
+}
+
+.woocommerce-breadcrumb a:hover {
+	color: var(--accent-rose-gold);
+}
+
+/* ── Product Tabs (single product) ────────────────────── */
+.woocommerce-tabs {
+	margin-top: clamp(3rem, 5vw, 5rem);
+}
+
+.woocommerce-tabs ul.tabs {
+	list-style: none;
+	display: flex;
+	gap: 2rem;
+	padding: 0;
+	margin: 0 0 2rem;
+	border-bottom: 1px solid rgba(240, 237, 232, 0.06);
+}
+
+.woocommerce-tabs ul.tabs li {
+	padding-bottom: 0.75rem;
+}
+
+.woocommerce-tabs ul.tabs li a {
+	font-size: 0.75rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	text-decoration: none;
+}
+
+.woocommerce-tabs ul.tabs li.active a {
+	color: var(--color-light);
+	border-bottom: 1px solid var(--accent-rose-gold);
+	padding-bottom: 0.75rem;
+}
+
+.woocommerce-tabs .panel h2 {
+	font-family: var(--font-display);
+	font-size: 1.3rem;
+	font-weight: 300;
+	margin-bottom: 1rem;
+}
+
+.woocommerce-tabs .panel p {
+	font-size: 0.9rem;
+	line-height: 1.85;
+	color: var(--color-muted);
+}
+
+/* ── My Account ───────────────────────────────────────── */
+.woocommerce-MyAccount-navigation ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 2rem;
+	border: 1px solid rgba(240, 237, 232, 0.06);
+}
+
+.woocommerce-MyAccount-navigation ul li {
+	border-bottom: 1px solid rgba(240, 237, 232, 0.04);
+}
+
+.woocommerce-MyAccount-navigation ul li:last-child {
+	border-bottom: none;
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+	display: block;
+	padding: 0.9rem 1.2rem;
+	font-size: 0.82rem;
+	letter-spacing: 0.12em;
+	color: var(--color-muted);
+	text-decoration: none;
+	transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.woocommerce-MyAccount-navigation ul li a:hover {
+	color: var(--accent-rose-gold);
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active a {
+	color: var(--color-light);
+	background-color: rgba(180, 131, 107, 0.06);
+}
+
+.woocommerce-MyAccount-content {
+	font-size: 0.9rem;
+	color: var(--color-muted);
+	line-height: 1.8;
+}
+
+.woocommerce-MyAccount-content a {
+	color: var(--accent-rose-gold);
+}
+
+/* ── Reviews on Product Page ──────────────────────────── */
+.woocommerce-Reviews .comment-text {
+	padding: 1.5rem;
+	border: 1px solid rgba(240, 237, 232, 0.06);
+	margin-bottom: 1rem;
+}
+
+.woocommerce-Reviews .comment-text .star-rating {
+	color: var(--accent-rose-gold);
+	margin-bottom: 0.5rem;
+}
+
+.woocommerce-Reviews .comment-text .description p {
+	font-size: 0.9rem;
+	line-height: 1.7;
+	color: var(--color-muted);
+}
+
+/* ── Star Rating ──────────────────────────────────────── */
+.star-rating {
+	color: var(--accent-rose-gold);
+	font-size: 0.8rem;
+}
+
+/* ── Track Order Page ─────────────────────────────────── */
+.track-order-wrap {
+	max-width: 600px;
+	margin: 0 auto;
+	padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+.track-order-wrap .form-row {
+	margin-bottom: 1.25rem;
+}
+
+.track-order-wrap label {
+	display: block;
+	font-size: 0.72rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	margin-bottom: 0.4rem;
+}
+
+.track-order-wrap input[type="text"] {
+	width: 100%;
+	background: transparent;
+	border: 1px solid rgba(240, 237, 232, 0.12);
+	color: var(--color-light);
+	font-family: var(--font-body);
+	font-size: 0.88rem;
+	padding: 0.8rem 1rem;
+}
+
+.track-order-wrap input[type="text"]:focus {
+	border-color: var(--accent-rose-gold);
+	outline: none;
+}

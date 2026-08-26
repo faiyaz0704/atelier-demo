@@ -1,0 +1,214 @@
+/* ==========================================================
+   ATELIER — About Page
+   ========================================================== */
+
+/* ── About Hero ───────────────────────────────────────── */
+.about-hero {
+	position: relative;
+	height: 70vh;
+	min-height: 450px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.about-hero-image {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	z-index: 1;
+}
+
+.about-hero-image--placeholder {
+	background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0c0c0c 100%);
+}
+
+.about-hero-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(8, 8, 8, 0.5) 0%, rgba(8, 8, 8, 0.85) 100%);
+	z-index: 2;
+}
+
+.about-hero-content {
+	position: relative;
+	z-index: 3;
+	text-align: center;
+	padding: var(--header-height) 1.5rem 0;
+}
+
+.about-hero-content h1 {
+	font-family: var(--font-display);
+	font-size: clamp(3rem, 7vw, 5.5rem);
+	font-weight: 300;
+	letter-spacing: 0.1em;
+	margin-bottom: 1rem;
+}
+
+.about-hero-subline {
+	font-size: 0.8rem;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: var(--accent-rose-gold);
+}
+
+/* ── Origin Section ───────────────────────────────────── */
+.origin-section {
+	padding: clamp(5rem, 10vw, 10rem) 0;
+}
+
+.origin-block {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: clamp(3rem, 5vw, 6rem);
+	align-items: center;
+	margin-bottom: clamp(5rem, 8vw, 8rem);
+}
+
+.origin-block:last-child {
+	margin-bottom: 0;
+}
+
+.origin-block.reversed {
+	direction: rtl;
+}
+
+.origin-block.reversed > * {
+	direction: ltr;
+}
+
+.origin-image-col {
+	width: 100%;
+}
+
+.origin-image-placeholder {
+	aspect-ratio: 4/5;
+	background: linear-gradient(135deg, #111 0%, #1a1715 50%, #0e0e0e 100%);
+	border: 1px solid rgba(240, 237, 232, 0.03);
+}
+
+.origin-image-col img {
+	width: 100%;
+	aspect-ratio: 4/5;
+	object-fit: cover;
+	border: 1px solid rgba(240, 237, 232, 0.03);
+}
+
+.origin-text-col {
+	padding: clamp(1rem, 3vw, 3rem) 0;
+}
+
+.origin-overline {
+	font-size: 0.7rem;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: var(--accent-rose-gold);
+	font-weight: 400;
+	display: block;
+	margin-bottom: 1rem;
+}
+
+.origin-headline {
+	font-family: var(--font-display);
+	font-size: clamp(1.8rem, 3vw, 2.8rem);
+	font-weight: 300;
+	letter-spacing: 0.04em;
+	margin-bottom: 1.5rem;
+}
+
+.origin-body {
+	font-size: 0.95rem;
+	line-height: 1.9;
+	color: var(--color-muted);
+}
+
+/* Editor content fallback */
+.about-editor-content {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.about-editor-content h2 {
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+}
+
+.about-editor-content p {
+	font-size: 0.95rem;
+	line-height: 1.9;
+	color: var(--color-muted);
+	margin-bottom: 1.25rem;
+}
+
+/* ── Values Strip ─────────────────────────────────────── */
+.values-strip {
+	background-color: var(--bg-deep-black);
+	border-top: 1px solid rgba(240, 237, 232, 0.04);
+	border-bottom: 1px solid rgba(240, 237, 232, 0.04);
+	padding: clamp(4rem, 6vw, 6rem) clamp(1.5rem, 5vw, 6rem);
+}
+
+.values-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: clamp(2rem, 4vw, 5rem);
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.value-item {
+	padding: 0 1rem;
+}
+
+.value-title {
+	font-family: var(--font-display);
+	font-size: clamp(1.3rem, 2vw, 1.8rem);
+	font-weight: 300;
+	letter-spacing: 0.04em;
+	margin-bottom: 0.75rem;
+}
+
+.value-desc {
+	font-size: 0.82rem;
+	color: var(--color-muted);
+	letter-spacing: 0.04em;
+	line-height: 1.6;
+}
+
+/* ── Studio Section ──────────────────────────────────── */
+.studio-section {
+	padding: 5rem 0;
+}
+
+.studio-image-wrap {
+	width: 100%;
+	aspect-ratio: 21 / 9;
+	overflow: hidden;
+	border-radius: 2px;
+}
+
+.studio-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.studio-image-placeholder {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 50%, #1a1a1a 100%);
+}
+
+@media (max-width: 768px) {
+	.studio-section {
+		padding: 3rem 0;
+	}
+	.studio-image-wrap {
+		aspect-ratio: 16 / 9;
+	}
+}

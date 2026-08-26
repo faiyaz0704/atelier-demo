@@ -1,0 +1,186 @@
+/* ==========================================================
+   ATELIER — Checkout Page
+   ========================================================== */
+
+.woocommerce-checkout {
+	padding-bottom: clamp(5rem, 8vw, 8rem);
+}
+
+/* ── Form Fields ──────────────────────────────────────── */
+.woocommerce-checkout .form-row {
+	margin-bottom: 1.25rem;
+}
+
+.woocommerce-checkout label {
+	font-size: 0.72rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	font-weight: 400;
+	display: block;
+	margin-bottom: 0.4rem;
+}
+
+.woocommerce-checkout label .required {
+	color: var(--accent-rose-gold);
+}
+
+.woocommerce-checkout input[type="text"],
+.woocommerce-checkout input[type="email"],
+.woocommerce-checkout input[type="tel"],
+.woocommerce-checkout input[type="number"],
+.woocommerce-checkout select,
+.woocommerce-checkout textarea {
+	width: 100%;
+	background: transparent;
+	border: 1px solid rgba(240, 237, 232, 0.12);
+	color: var(--color-light);
+	font-family: var(--font-body);
+	font-size: 0.88rem;
+	padding: 0.8rem 1rem;
+	transition: border-color var(--transition-fast);
+}
+
+.woocommerce-checkout input:focus,
+.woocommerce-checkout select:focus,
+.woocommerce-checkout textarea:focus {
+	border-color: var(--accent-rose-gold);
+	outline: none;
+}
+
+.woocommerce-checkout select {
+	appearance: none;
+	-webkit-appearance: none;
+	cursor: pointer;
+}
+
+.woocommerce-checkout select option {
+	background-color: var(--bg-deep-black);
+	color: var(--color-light);
+}
+
+/* ── Section Headings ─────────────────────────────────── */
+.woocommerce-checkout h3 {
+	font-family: var(--font-display);
+	font-size: clamp(1.4rem, 2vw, 1.8rem);
+	font-weight: 300;
+	letter-spacing: 0.08em;
+	margin-bottom: 1.5rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 1px solid rgba(240, 237, 232, 0.06);
+}
+
+/* ── Two-Column Layout ────────────────────────────────── */
+.woocommerce-checkout .col2-set {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: clamp(2rem, 4vw, 4rem);
+	margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+@media (max-width: 768px) {
+	.woocommerce-checkout .col2-set {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ── Order Review ─────────────────────────────────────── */
+#order_review_heading {
+	margin-top: 2rem;
+}
+
+.woocommerce-checkout-review-order-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 2rem;
+}
+
+.woocommerce-checkout-review-order-table th {
+	font-size: 0.72rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--color-ghost);
+	font-weight: 400;
+	padding: 0.8rem 0;
+	text-align: left;
+	border-bottom: 1px solid rgba(240, 237, 232, 0.06);
+}
+
+.woocommerce-checkout-review-order-table td {
+	padding: 0.8rem 0;
+	color: var(--color-light);
+	border-bottom: 1px solid rgba(240, 237, 232, 0.04);
+	font-size: 0.9rem;
+}
+
+.woocommerce-checkout-review-order-table .order-total td {
+	font-family: var(--font-display);
+	font-size: 1.3rem;
+	font-style: italic;
+	color: var(--accent-rose-gold);
+}
+
+/* ── Payment Methods ──────────────────────────────────── */
+.wc_payment_methods {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 2rem;
+}
+
+.wc_payment_method {
+	border: 1px solid rgba(240, 237, 232, 0.06);
+	margin-bottom: 0.5rem;
+	padding: 1.2rem 1.5rem;
+}
+
+.wc_payment_method label {
+	font-size: 0.88rem;
+	letter-spacing: 0.04em;
+	text-transform: none;
+	color: var(--color-light);
+	cursor: pointer;
+}
+
+.payment_box {
+	padding: 1rem 0 0;
+	font-size: 0.85rem;
+	color: var(--color-muted);
+	line-height: 1.7;
+}
+
+/* ── Place Order Button ───────────────────────────────── */
+#place_order {
+	width: 100%;
+	height: 56px;
+	background-color: var(--accent-rose-gold);
+	color: #080808;
+	border: none;
+	font-family: var(--font-body);
+	font-size: 0.82rem;
+	font-weight: 500;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background-color var(--transition-fast);
+}
+
+#place_order:hover {
+	background-color: #a07260;
+}
+
+/* ── WC Notices ───────────────────────────────────────── */
+.woocommerce-error,
+.woocommerce-message,
+.woocommerce-info {
+	padding: 1rem 1.5rem;
+	margin-bottom: 1.5rem;
+	font-size: 0.88rem;
+	border-left: 3px solid var(--accent-rose-gold);
+	background-color: rgba(180, 131, 107, 0.05);
+	color: var(--color-light);
+	list-style: none;
+}
+
+.woocommerce-error {
+	border-left-color: #c44;
+}
